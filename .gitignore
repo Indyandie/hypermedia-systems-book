@@ -1,2 +1,5 @@
 *.pdf
 _site
+
+# epub
+/epub/**/
