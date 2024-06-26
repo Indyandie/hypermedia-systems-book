@@ -35,9 +35,9 @@ cpbook && cpimg
 
 cd book && pandoc -t epub3 -f typst \
     --css ../epub.css \
-    --toc --split-level=2 --top-level-division=chapter \
+    --epub-metadata ../hypermediasystems.xml \
+    --toc --split-level=2 --top-level-division=chapter -N \
     --standalone \
-    --toc \
     -o ../hypermedia-systems-book.epub \
     --metadata title="Hypermedia Systems" \
     HypermediaSystems.typ && echo "✓ epub created"
