@@ -1,15 +1,16 @@
 #import "./lib/definitions.typ": *
 // #import "./lib/style.typ": *
 
-[Hypermedia Systems],
-authors: ("Carson Gross", "Adam Stepinski", "Deniz Akşimşek"),
-frontmatter: {
-  page(include "-1-copy-ack.typ", header: none,numbering: none)
-  page({ include "-2-dedication.typ" }, header: none, numbering:none)
-  page(counter(page).update(0),
-  header: none, numbering: none)
-  include "-3-foreword.typ"
-},
+[Hypermedia Systems], authors: ("Carson Gross", "Adam Stepinski", "Deniz
+Akşimşek"),
+
+= Copyright
+#include "-1-copy-ack.typ",
+
+= Dedication
+
+#include "-2-dedication.typ"
+#include "-3-foreword.typ"
 
 = Hypermedia Concepts
 
