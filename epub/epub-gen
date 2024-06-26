@@ -1,0 +1,43 @@
+#!/usr/bin/env zsh
+
+cpbook() {
+    if [[ -d book ]]; then
+        rm -rf book && echo "✓ rm book/" || echo "rm book/"
+    fi
+
+    mkdir book && echo "✓ created book/"
+    cp ../ch*.typ ./book/
+    cp ../-*.typ ./book/
+    cp ../lib ./book/ -r
+    cp ./HypermediaSystems.typ ./book/
+    # fd ^- ../ -x cp {} ./book/0{/.}.typ
+}
+
+cpimg() {
+    cp ../images ./book/ -r && echo "✓ copied images"
+    sd 'version="1.1"' '$0 fill="#aaaaaa"' ./book/images/diagram/*.svg && echo "✓ update svg fill"
+    sd 'svg">' '$0\n<rect width="100%" height="100%" fill="#333333" />' ./book/images/diagram/*.svg && echo "✓ update svg background"
+}
+
+# cpbook && cpimg
+
+# ../title.txt \
+# cd book && pandoc -t epub3 -f typst \
+#     --css ../epub.css \
+#     --toc --split-level=2 --top-level-division=chapter \
+#     --standalone \
+#     --toc \
+#     -o ../hypermedia-systems.epub \
+#     --metadata title="Hypermedia Systems" \
+#     *.typ && echo "✓ epub created"
+
+cpbook && cpimg
+
+cd book && pandoc -t epub3 -f typst \
+    --css ../epub.css \
+    --toc --split-level=2 --top-level-division=chapter \
+    --standalone \
+    --toc \
+    -o ../hypermedia-systems-book.epub \
+    --metadata title="Hypermedia Systems" \
+    HypermediaSystems.typ && echo "✓ epub created"
