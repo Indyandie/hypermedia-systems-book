@@ -6,11 +6,8 @@ cpbook() {
     fi
 
     mkdir book && echo "✓ created book/"
-    cp ../ch*.typ ./book/
-    cp ../-*.typ ./book/
-    cp ./lib ./book/ -r || cp ../lib ./book/ -r
-    cp ./HypermediaSystems.typ ./book/
-    # fd ^- ../ -x cp {} ./book/0{/.}.typ
+    cp ../*.typ ./book/ && echo "✓ copy typ files"
+    cp ../lib ./book/ -r && echo "✓ copy lib/"
 }
 
 cpimg() {
@@ -21,11 +18,9 @@ cpimg() {
 
 cpbook && cpimg
 
-cd book && pandoc -t epub3 -f typst \
-    --css ../epub.css \
-    --epub-metadata ../hypermediasystems.xml \
-    --toc --split-level=2 --top-level-division=chapter \
-    --standalone \
-    -o ../hypermedia-systems-book.epub \
-    --metadata title="Hypermedia Systems" \
-    HypermediaSystems.typ && echo "✓ epub created"
+cd book && pandoc HypermediaSystems-ebook.typ \
+    -o ../HypermediaSystems.epub \
+    --toc --split-level=3 --top-level-division=chapter \
+    --css lib/epub.css \
+    --metadata-file lib/epub.yaml \
+    --epub-cover-image=images/cover.png && echo "✓ epub created"
