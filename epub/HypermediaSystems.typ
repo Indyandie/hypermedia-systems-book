@@ -1,10 +1,12 @@
 #import "./lib/definitions.typ": *
-// #import "./lib/style.typ": *
+#import "./lib/style.typ": *
 
-[Hypermedia Systems], authors: ("Carson Gross", "Adam Stepinski", "Deniz
-Akşimşek"),
+#document(
+  title: "Hypermedia Systems", authors: ("Carson Gross", "Adam Stepinski", "Deniz Akşimşek"),
+)
 
 = Copyright
+
 #include "-1-copy-ack.typ",
 
 = Dedication

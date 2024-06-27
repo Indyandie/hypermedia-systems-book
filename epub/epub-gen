@@ -8,7 +8,7 @@ cpbook() {
     mkdir book && echo "✓ created book/"
     cp ../ch*.typ ./book/
     cp ../-*.typ ./book/
-    cp ../lib ./book/ -r
+    cp ./lib ./book/ -r || cp ../lib ./book/ -r
     cp ./HypermediaSystems.typ ./book/
     # fd ^- ../ -x cp {} ./book/0{/.}.typ
 }
@@ -24,7 +24,7 @@ cpbook && cpimg
 cd book && pandoc -t epub3 -f typst \
     --css ../epub.css \
     --epub-metadata ../hypermediasystems.xml \
-    --toc --split-level=2 --top-level-division=chapter -N \
+    --toc --split-level=2 --top-level-division=chapter \
     --standalone \
     -o ../hypermedia-systems-book.epub \
     --metadata title="Hypermedia Systems" \

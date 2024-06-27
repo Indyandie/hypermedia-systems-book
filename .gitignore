@@ -3,4 +3,5 @@ _site
 
 # epub
 /epub/**/
+!/epub/lib
 /epub/*.epub
