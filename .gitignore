@@ -1,4 +1,5 @@
 *.pdf
+*.epub
 _site
 
 # epub
