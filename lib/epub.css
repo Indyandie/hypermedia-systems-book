@@ -27,7 +27,7 @@ html {
   line-height: 1.2;
   font-family: Linux Libertine, serif;
   color: #1a1a1a;
-  background-color: #fdfdfd;
+  background-color: transparent;
 }
 p {
   text-indent: 0;
