@@ -8,10 +8,10 @@
 
 ## Assembly Line
 
-1. Setup `typ` files
+1. Setup `typ` files and `lib/`
 1. Copy images and adjust `svg` fill and background
 1. Convert `typ` to `epub`
 
 ## Generate EPUB
 
-Navige to the`epub` directory and run `./epub-script`.
+Navigate to the`epub` directory and run `./epub-script`.
