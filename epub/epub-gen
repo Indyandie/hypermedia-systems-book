@@ -19,18 +19,6 @@ cpimg() {
     sd 'svg">' '$0\n<rect width="100%" height="100%" fill="#333333" />' ./book/images/diagram/*.svg && echo "✓ update svg background"
 }
 
-# cpbook && cpimg
-
-# ../title.txt \
-# cd book && pandoc -t epub3 -f typst \
-#     --css ../epub.css \
-#     --toc --split-level=2 --top-level-division=chapter \
-#     --standalone \
-#     --toc \
-#     -o ../hypermedia-systems.epub \
-#     --metadata title="Hypermedia Systems" \
-#     *.typ && echo "✓ epub created"
-
 cpbook && cpimg
 
 cd book && pandoc -t epub3 -f typst \
