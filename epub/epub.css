@@ -169,13 +169,13 @@ blockquote {
 }
 code {
   font-family: Menlo, Monaco, "Lucida Console", Consolas, monospace;
-  font-size: 110%;
+  font-size: 80%;
   margin: 0;
   hyphens: manual;
 }
 pre {
   margin: 1em 0;
-  font-size: 110%;
+  font-size: 80%;
   overflow: auto;
 }
 pre code {
