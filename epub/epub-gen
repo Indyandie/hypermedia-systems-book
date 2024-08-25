@@ -19,8 +19,10 @@ cpimg() {
 cpbook && cpimg
 
 cd book && pandoc HypermediaSystems-ebook.typ \
-    -o ../HypermediaSystems.epub \
+    -o ../HypermediaSystemsBook.epub \
     --toc --split-level=3 --top-level-division=chapter \
     --css lib/epub.css \
     --metadata-file lib/epub.yaml \
     --epub-cover-image=images/cover.png && echo "✓ epub created"
+
+cp ../HypermediaSystemsBook.epub $EPUB_LIB && echo "✓ copied to dropbox"
