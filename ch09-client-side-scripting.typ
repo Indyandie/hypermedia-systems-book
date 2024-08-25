@@ -83,7 +83,8 @@ and where nothing else comes close: _interaction design_. Business logic and
 presentation logic are the responsibility of the server, where we can pick
 whichever languages or tools are appropriate for our business domain.
 
-#sidebar[The Server][Keeping business logic and presentation logic both "on the server" does not mean
+#block(breakable: false,
+sidebar[The Server][Keeping business logic and presentation logic both "on the server" does not mean
   these two "concerns" are mixed or coupled. They can be modularized on the
   server. In fact, they _should_ be modularized on the server, along with all the
   other concerns of our application.
@@ -91,7 +92,7 @@ whichever languages or tools are appropriate for our business domain.
   Note also that, especially in web development parlance, the humble
   "server" is usually a whole fleet of racks, virtual machines, containers and
   more. Even a worldwide network of datacenters is reduced to "the server" when
-  discussing the server-side of a Hypermedia-Driven Application.]
+  discussing the server-side of a Hypermedia-Driven Application.])
 
 Satisfying these two constraints sometimes requires us to diverge from what is
 typically considered best practice for JavaScript. Keep in mind that the
@@ -1467,16 +1468,16 @@ Given all that, our updated code will look like this:
 3. Handle the result of the user’s selection
 
 And now, when this button is clicked, we get a nice looking dialog in our web
-application:
-
-#figure([#image("images/screenshot_sweet_alert.png")], caption: [
-])
-
-Much nicer than the system confirmation dialog. Still, this feels a little
+application (@fig-swal-screenshot) --- much nicer than the system confirmation dialog. Still, this feels a little
 wrong. This is a lot of code to write just to trigger a slightly nicer `confirm()`,
 isn’t it? And the htmx JavaScript code we are using here feels awkward. It would
 be more natural to move the htmx out to attributes on the button, as we have
 been doing, and then trigger the request via events.
+
+#figure(
+  image("images/screenshot_sweet_alert.png"),
+  caption: [A SweetAlert dialog box]
+)<fig-swal-screenshot>
 
 So let’s take a different approach and see how that looks.
 

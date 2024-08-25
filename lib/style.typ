@@ -102,32 +102,30 @@
     show figure.caption: set text(font: secondary-font, size: 10pt)
     it
   }
+  
+  #set figure(placement: auto)
+  
   #show figure.where(kind: raw): it => {
-    set figure.caption(position: top)
-    show figure.caption: it => {
-      set text(size: 11pt)
-      pad(it, bottom: 1em)
-      v(-1em)
-    }
-    set par(justify: false)
-    set block(breakable: true, width: 100%)
-    show raw.where(block: true): it => {
-      set block(width: 100%, stroke: none)
-      set align(start)
-      it
-    }
+    show raw.where(block: true): set block(width: 100%, stroke: none, spacing: 0pt)
     block(
-      spacing: 1em + leading,
-      inset: (left: 1em, right: 1em),
+      inset: (x: 1em, y: .5em + leading),
+      spacing: 0pt,
       width: 100%,
-      it
+      {
+        if it.caption != none {
+          set text(size: 11pt, font: secondary-font)
+          pad(it.caption, top: 0pt, bottom: .5em)
+          v(-.5em)
+        }
+        it.body
+      }
     )
   }
   
   #show raw.where(block: true): code-with-callouts
 
   #show link: it => {
-    if type(it.dest) != str { it }
+    if type(it.dest) != str or it.body == text(it.dest) { it }
     else {
       it.body
       footnote(it.dest)
@@ -195,7 +193,7 @@
 
     #set heading(
       supplement: it => ([Part], [Chapter]).at(
-        it.at("level", default: 2) - 1, default: [Section]),
+        it.at("depth", default: 2) - 1, default: [Section]),
       numbering: (..bits) => if bits.pos().len() < 2 {
         // Show part number only on parts.
         numbering("I.", ..bits)

@@ -5,7 +5,7 @@
 *Hypermedia Systems*\
 #sym.copyright 2023 Carson Gross, Adam Stepinski, Deniz Akşimşek
 
-Editor: Wm Talcott
+Editor: William Talcott
 
 CC BY-NC-SA: This work is licensed under the Creative Commons
 Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy
@@ -16,7 +16,7 @@ Read online: https://hypermedia.systems/
 
 Thanks to:
 - Berkeley Graphics for their permission to use _Berkeley Mono_ and the design of
-  the book cover,
+  the first edition's cover,
 - All contributors to the book:
   https://github.com/bigskysoftware/hypermedia-systems-book/graphs/contributors,
 - Manning Publications for their support in the initial stages of writing this
@@ -29,4 +29,4 @@ Typefaces:
 - Linux Biolinum (by the same, for secondary text),
 - Berkeley Mono (by Berkeley Graphics, for code and ascii art diagrams).
 
-Written and typeset with Typst.
+Written and typeset with Typst (#link("https://typst.app")).
