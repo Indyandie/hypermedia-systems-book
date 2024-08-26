@@ -25,4 +25,4 @@ cd book && pandoc HypermediaSystems-ebook.typ \
     --metadata-file lib/epub.yaml \
     --epub-cover-image=images/cover.png && echo "✓ epub created"
 
-cp ../HypermediaSystemsBook.epub $EPUB_LIB && echo "✓ copied to dropbox"
+cp ../HypermediaSystemsBook.epub $EPUB_LIB && echo "✓ copied to library"
